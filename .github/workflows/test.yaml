@@ -27,11 +27,17 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run Tests
-        run: pytest --cov=src tests/
+      - name: Run Tests with Coverage
+        run: |
+          pytest --cov=src --cov-report=xml --cov-report=html
 
-      - name: Upload Coverage Report
-        uses: codecov/codecov-action@v3
+      - name: Upload Coverage Reports to GitHub Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-reports
+          path: |
+            coverage.xml
+            htmlcov/
 
   docker-test:
     name: Run Tests in Docker
