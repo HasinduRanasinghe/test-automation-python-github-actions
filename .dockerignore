@@ -1,0 +1,18 @@
+# Ignore Python cache files
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore IDE-specific files
+.idea/
+.venv/
+
+# Ignore logs and temporary files
+*.log
+*.tmp
+
+# Ignore Dockerfile backup or temp files
+Dockerfile~
+
+# Ignore GitHub Workflow file
+.github
