@@ -42,6 +42,7 @@ jobs:
   docker-test:
     name: Run Tests in Docker
     runs-on: ubuntu-latest
+    needs: test
 
     steps:
       - name: Checkout Repository
